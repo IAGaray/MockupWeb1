@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+.grid-container>*{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+
+}
+header{
+    grid-area: header;
+    background-color: aquamarine;
+}
+nav{
+    grid-area: navbar;
+    background-color: aqua;
+}
+aside{
+    grid-area: aside;
+    background-color: beige;
+}
+section{
+    grid-area: section;
+    background-color: rgb(48, 153, 153);
+}
+footer{
+    grid-area: footer;
+    background-color: #995e5e;
+}
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+    "header"
+    "navbar"
+    "aside"
+    "section"
+    "footer";
+}
+@media (min-width: 600px) {
+    .grid-container{
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+        "header header"
+        "navbar navbar"
+        "aside section"
+        "footer footer";
+    }
+}
